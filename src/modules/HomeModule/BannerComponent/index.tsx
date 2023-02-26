@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import { Lobster } from "next/font/google";
-import styles from "@/styles/home.module.css";
 
 const lobster = Lobster({ subsets: ["latin"], weight: "400" });
 
@@ -18,11 +17,11 @@ const BannerComponent = () => {
           width: "fit-content",
         }}
       >
-        <span className={styles.maroonText}>N</span>
-        asi <span className={styles.maroonText}>L</span>emak
+        <span style={{ color: "#800000" }}>N</span>
+        asi <span style={{ color: "#800000" }}>L</span>emak
         <br />
-        <span className={styles.maroonText}>C</span>ik{" "}
-        <span className={styles.maroonText}>S</span>iti
+        <span style={{ color: "#800000" }}>C</span>ik{" "}
+        <span style={{ color: "#800000" }}>S</span>iti
       </h1>
     </Box>
   );
