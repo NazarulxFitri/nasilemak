@@ -1,8 +1,9 @@
 body {
-    background-image: linear-gradient(to bottom, #ffafbd, #ffb3b4, #ffb7ac, #ffbda5, #ffc3a0);
-    color: #FFF;
+    background-image: linear-gradient(to bottom, #519e2e, #63a939, #75b443, #86bf4e, #97ca59);
+    color: #333;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 p, h1, h2, h4 {
@@ -10,8 +11,7 @@ p, h1, h2, h4 {
 }
 
 p {
-    letter-spacing: 0.075em;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 h1 {
@@ -24,18 +24,4 @@ h2 {
 
 h4 {
     font-size: 24px;
-}
-
-a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #EFEFEF !important;
-    cursor: pointer;
-}
-
-p {
-    font-size: 16px;
 }

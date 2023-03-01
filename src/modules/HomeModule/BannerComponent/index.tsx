@@ -13,15 +13,15 @@ const BannerComponent = () => {
           fontSize: "112px",
           margin: "0 auto",
           textAlign: "center",
-          textShadow: "1px 16px #CD5C5C",
+          textShadow: "1px 8px #808080",
           width: "fit-content",
         }}
       >
-        <span style={{ color: "#800000" }}>N</span>
-        asi <span style={{ color: "#800000" }}>L</span>emak
+        <span style={{ color: "#2F5C1A" }}>N</span>
+        asi <span style={{ color: "#2F5C1A" }}>L</span>emak
         <br />
-        <span style={{ color: "#800000" }}>C</span>ik{" "}
-        <span style={{ color: "#800000" }}>S</span>iti
+        <span style={{ color: "#2F5C1A" }}>C</span>ik{" "}
+        <span style={{ color: "#2F5C1A" }}>S</span>iti
       </h1>
     </Box>
   );
