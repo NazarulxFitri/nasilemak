@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Lobster } from "next/font/google";
 
 const lobster = Lobster({ subsets: ["latin"], weight: "400" });
@@ -6,14 +6,15 @@ const lobster = Lobster({ subsets: ["latin"], weight: "400" });
 const BannerComponent = () => {
   return (
     <Box pb={4}>
-      <h1
+      <Typography
+        variant="h1"
         className={lobster.className}
-        style={{
+        sx={{
           color: "#FFF",
-          fontSize: "112px",
-          margin: "0 auto",
+          fontSize: { xs: "68px", md: "112px" },
+          margin: "16px auto 0",
           textAlign: "center",
-          textShadow: "1px 8px #808080",
+          textShadow: "1px 12px #468429",
           width: "fit-content",
         }}
       >
@@ -22,7 +23,7 @@ const BannerComponent = () => {
         <br />
         <span style={{ color: "#2F5C1A" }}>C</span>ik{" "}
         <span style={{ color: "#2F5C1A" }}>S</span>iti
-      </h1>
+      </Typography>
     </Box>
   );
 };

@@ -1,9 +1,8 @@
 body {
-    background-image: linear-gradient(to bottom, #519e2e, #63a939, #75b443, #86bf4e, #97ca59);
+    background-image: linear-gradient(to bottom, #519e2e, #67ad3d, #7dbb4c, #92ca5b, #a7d96b);
     color: #333;
     margin: 0;
     padding: 0;
-    height: 100vh;
 }
 
 p, h1, h2, h4 {
@@ -11,7 +10,7 @@ p, h1, h2, h4 {
 }
 
 p {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 h1 {

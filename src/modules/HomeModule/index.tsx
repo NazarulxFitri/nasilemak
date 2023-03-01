@@ -1,47 +1,79 @@
-import { Box, Grid } from "@mui/material";
-import { Lobster } from "next/font/google";
+import { Box, Grid, Tooltip } from "@mui/material";
+import { Montserrat } from "next/font/google";
 import BannerComponent from "./BannerComponent";
 import Image from "next/image";
-import { LikeIcon, WhatsappIcon } from "@/components";
+import { BagIcon, LikeIcon } from "@/components";
+import useGetMenuListing from "@/data/useGetMenuListing";
 
-const lobster = Lobster({ subsets: ["latin"], weight: "400" });
-const source = "/assets/nasi_lemak_image.jpeg";
+const montserratThin = Montserrat({ subsets: ["latin"], weight: "400" });
+const montserrat = Montserrat({ subsets: ["latin"], weight: "700" });
 
 const HomeModule = () => {
+  const { data } = useGetMenuListing();
+
   return (
     <Box>
       <BannerComponent />
       <Box>
         <Grid container rowSpacing={4} columnSpacing={2}>
-          <Grid item xs={12} md={4}>
-            <Box sx={{ boxShadow: "1px 8px 16px #808080" }}>
-              <Box>
-                <Image
-                  alt="nasiLemak"
-                  src="/assets/nasi_lemak_image.jpeg"
-                  width={328}
-                  height={240}
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
-              </Box>
-              <Box p={1} sx={{ background: "#FFF" }}>
-                <Box display="flex" justifyContent="space-between">
-                  <p>Nasi Lemak Ayam</p>
-                  <p>
-                    <LikeIcon />
-                  </p>
+          {data.map((item, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <Box sx={{ boxShadow: "1px 8px 16px #468429" }}>
+                <Box position="relative">
+                  <Image
+                    alt={`Nasi Lemak Cik Siti | ${item.name}`}
+                    src={item.imgsrc}
+                    width={328}
+                    height={240}
+                    style={{ width: "100%", height: "240px", display: "block" }}
+                  />
+                  {item.like && (
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "-12px",
+                        right: "-12px",
+                        padding: "4px 6px",
+                        background: "#FFF",
+                        borderRadius: "20px",
+                      }}
+                    >
+                      <LikeIcon />
+                    </Box>
+                  )}
                 </Box>
-                <p
-                  style={{
-                    marginBottom: "8px",
-                  }}
-                >
-                  Rm 1.00
-                </p>
-                <WhatsappIcon color={"#2F5C1A"} />
+                <Box p={1} sx={{ backgroundColor: "#FFF", height: "160px" }}>
+                  <p
+                    className={montserrat.className}
+                    style={{ marginBottom: "4px" }}
+                    dangerouslySetInnerHTML={{ __html: item.name! }}
+                  />
+                  <p
+                    className={montserrat.className}
+                    style={{ marginBottom: "4px" }}
+                    dangerouslySetInnerHTML={{ __html: item.price! }}
+                  />
+                  <p
+                    className={montserratThin.className}
+                    style={{
+                      marginBottom: "4px",
+                      height: "60px",
+                      overflow: "hidden",
+                    }}
+                    dangerouslySetInnerHTML={{ __html: item.desc! }}
+                  />
+                  <Tooltip title="Klik untuk membuat pesanan">
+                    <Box
+                      mt={2}
+                      sx={{ width: "fit-content", cursor: "pointer" }}
+                    >
+                      <BagIcon />
+                    </Box>
+                  </Tooltip>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Box>
