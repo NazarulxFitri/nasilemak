@@ -1,19 +1,51 @@
+import { CloseIcon } from "@/components";
 import { Box } from "@mui/material";
+import { Montserrat } from "next/font/google";
 
-const DialogueComponent = () => {
+interface DialogueComponentProps {
+  name?: string;
+  price?: string;
+  desc?: string;
+  like?: boolean;
+}
+
+const montserratThin = Montserrat({ subsets: ["latin"], weight: "400" });
+const montserrat = Montserrat({ subsets: ["latin"], weight: "700" });
+
+const DialogueComponent: React.FC<DialogueComponentProps> = ({
+  name,
+  price,
+  desc,
+  like,
+  // @ts-ignore
+  setOpen,
+}) => {
   return (
     <Box
+      className={montserrat.className}
       sx={{
         background: "#FFF",
+        borderRadius: "16px",
+        postion: "relative",
         width: { xs: "92%", md: "60%" },
-        height: { xs: "30%" },
         margin: { xs: "50% auto", md: "18% auto" },
         padding: { xs: "12px" },
       }}
     >
-      <h4>Text in a modal</h4>
-      <p id="modal-modal-description" style={{ marginTop: 2 }}>
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      <Box
+        sx={{
+          position: "absolute",
+          width: "fit-content",
+          right: { xs: "4%", md: "20%" },
+        }}
+        onClick={() => setOpen(false)}
+      >
+        <CloseIcon />
+      </Box>
+      <p>{name}</p>
+      <p style={{ marginTop: "8px" }}>{price}</p>
+      <p style={{ marginTop: "8px" }} className={montserratThin.className}>
+        {desc}
       </p>
     </Box>
   );

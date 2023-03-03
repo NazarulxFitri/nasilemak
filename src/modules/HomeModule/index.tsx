@@ -6,6 +6,7 @@ import { BagIcon, LikeIcon } from "@/components";
 import useGetMenuListing from "@/data/useGetMenuListing";
 import { useState } from "react";
 import DialogueComponent from "./DialogueComponent";
+import IconModalComponent from "./IconModalComponent";
 
 const montserratThin = Montserrat({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin"], weight: "700" });
@@ -16,9 +17,6 @@ const HomeModule = () => {
   const filteredData = data.filter((item) =>
     item.name.toLowerCase().includes(input.toLowerCase())
   );
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   function handleChange(e: any) {
     e.preventDefault();
@@ -38,7 +36,7 @@ const HomeModule = () => {
         />
       </Box>
       {!!input && !filteredData[0] && (
-        <Box mt={8} mb={50}>
+        <Box mb={6}>
           <h4 className={montserrat.className}>
             Maaf, menu yang anda cari tidak dijumpai. Sila cuba lagi. Terima
             Kasih !
@@ -48,7 +46,7 @@ const HomeModule = () => {
       <Box>
         <Grid container rowSpacing={4} columnSpacing={2}>
           {filteredData.map((item, idx) => (
-            <Grid item xs={12} md={4} key={idx}>
+            <Grid item xs={12} sm={6} md={4} key={idx}>
               <Box sx={{ boxShadow: "1px 8px 16px #468429" }}>
                 <Box position="relative">
                   <Image
@@ -98,21 +96,8 @@ const HomeModule = () => {
                     dangerouslySetInnerHTML={{ __html: item.desc! }}
                   />
                   <Tooltip title="Klik untuk membuat pesanan">
-                    <Box
-                      mt={2}
-                      sx={{ width: "fit-content", cursor: "pointer" }}
-                      onClick={handleOpen}
-                    >
-                      <BagIcon />
-                    </Box>
+                    <IconModalComponent {...{ item }} />
                   </Tooltip>
-                  <Modal
-                    open={open}
-                    onClose={handleClose}
-                    sx={{ background: "transparent" }}
-                  >
-                    <DialogueComponent />
-                  </Modal>
                 </Box>
               </Box>
             </Grid>
