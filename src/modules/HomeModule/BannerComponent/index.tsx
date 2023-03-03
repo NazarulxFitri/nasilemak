@@ -10,6 +10,7 @@ const BannerComponent = () => {
         variant="h1"
         className={lobster.className}
         sx={{
+          fontFamily: "unset",
           color: "#FFF",
           fontSize: { xs: "68px", md: "112px" },
           margin: "16px auto 0",
