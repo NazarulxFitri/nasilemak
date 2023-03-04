@@ -26,7 +26,7 @@ const IconModalComponent = ({ item }: any) => {
         onClose={handleClose}
         sx={{
           background: "transparent",
-          ".MuiBackdrop-root": { background: "rgba(0,0,0,0.24)" },
+          ".MuiBackdrop-root": { background: "rgba(0,0,0,0.56)" },
         }}
       >
         <Box
@@ -73,7 +73,7 @@ const IconModalComponent = ({ item }: any) => {
                 <span style={{ alignItems: "center", display: "inline-flex" }}>
                   Whatsapp - Klik ikon di sebelah
                 </span>
-                <Box ml={2} sx={{ display: "inline-flex" }}>
+                <Box ml={0.5} sx={{ display: "inline-flex" }}>
                   <WhatsappIcon />
                 </Box>
               </p>
