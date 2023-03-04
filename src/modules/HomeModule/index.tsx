@@ -5,7 +5,6 @@ import Image from "next/image";
 import { BagIcon, LikeIcon } from "@/components";
 import useGetMenuListing from "@/data/useGetMenuListing";
 import { useState } from "react";
-import DialogueComponent from "./DialogueComponent";
 import IconModalComponent from "./IconModalComponent";
 
 const montserratThin = Montserrat({ subsets: ["latin"], weight: "400" });

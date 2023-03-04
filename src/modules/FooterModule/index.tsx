@@ -12,11 +12,12 @@ const FooterModule = () => {
       sx={{
         background: "#FFF",
         textAlign: "center",
-        color: "#2F5C1A",
         boxShadow: "1px 1px 10px #2F5C1A",
       }}
     >
-      Copyright © 2023 Nasi Lemak Cik Siti . All rights reserved
+      Copyright © 2023{" "}
+      <span style={{ color: "#2F5C1A" }}>Nasi Lemak Cik Siti</span> . All rights
+      reserved
     </Box>
   );
 };
