@@ -13,7 +13,7 @@ const IconModalComponent = ({ item }: any) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <>
+    <Box>
       <Box
         mt={2}
         sx={{ width: "fit-content", cursor: "pointer" }}
@@ -30,7 +30,7 @@ const IconModalComponent = ({ item }: any) => {
         }}
       >
         <Box
-          className={montserrat.className}
+          className={`${montserrat.className} animate__animated animate__bounceInDown`}
           sx={{
             background: "#FFF",
             borderRadius: "16px",
@@ -40,17 +40,6 @@ const IconModalComponent = ({ item }: any) => {
             padding: { xs: "12px" },
           }}
         >
-          <Box
-            sx={{
-              position: "absolute",
-              width: "fit-content",
-              cursor: "pointer",
-              right: { xs: "4%", md: "20%" },
-            }}
-            onClick={() => setOpen(false)}
-          >
-            <CloseIcon />
-          </Box>
           <p>{item.name}</p>
           <p style={{ marginTop: "8px" }}>{item.price}</p>
           <p style={{ marginTop: "8px" }} className={montserratThin.className}>
@@ -87,7 +76,7 @@ const IconModalComponent = ({ item }: any) => {
           </Box>
         </Box>
       </Modal>
-    </>
+    </Box>
   );
 };
 

@@ -1,11 +1,12 @@
-import { Box, Grid, Modal, TextField, Tooltip } from "@mui/material";
+import { Box, Grid, TextField, Tooltip } from "@mui/material";
 import { Montserrat } from "next/font/google";
 import BannerComponent from "./BannerComponent";
 import Image from "next/image";
-import { BagIcon, LikeIcon } from "@/components";
+import { LikeIcon } from "@/components";
 import useGetMenuListing from "@/data/useGetMenuListing";
 import { useState } from "react";
 import IconModalComponent from "./IconModalComponent";
+import MenuModalComponent from "./MenuModalComponent";
 
 const montserratThin = Montserrat({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin"], weight: "700" });
@@ -27,6 +28,7 @@ const HomeModule = () => {
     <Box>
       <BannerComponent />
       <Box mb={6}>
+        <MenuModalComponent />
         <TextField
           sx={{ cursor: "pointer", width: { xs: "100%", md: "25%" } }}
           id="standard-basic"

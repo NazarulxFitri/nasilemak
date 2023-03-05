@@ -18,7 +18,7 @@ const MainBanner = styled("h1")(({ theme }) => ({
 
 const BannerComponent = () => {
   return (
-    <Box pb={4}>
+    <Box pb={4} className={"animate__animated animate__bounce"}>
       <MainBanner className={lobster.className}>
         <span style={{ color: "#2F5C1A" }}>N</span>
         asi <span style={{ color: "#2F5C1A" }}>L</span>emak

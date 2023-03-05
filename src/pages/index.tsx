@@ -1,12 +1,11 @@
-import { HeadTag } from "@/components";
 import { Box, Container } from "@mui/material";
 import HomeModule from "@/modules/HomeModule";
 import FooterModule from "@/modules/FooterModule";
+import "animate.css";
 
 export default function Home() {
   return (
     <>
-      <HeadTag />
       <Container>
         <Box>
           <HomeModule />
